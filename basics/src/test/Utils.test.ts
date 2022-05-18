@@ -1,6 +1,16 @@
 import { Utils } from '../app/Utils';
 
 describe('Utils test suite', () => {
+  beforeAll(() => {
+    // 1回だけ
+    console.log('beforeAll');
+  });
+
+  beforeEach(() => {
+    // 毎回
+    console.log('beforeEach');
+  });
+
   test('first test', () => {
     const result = Utils.toUppercase('abc');
     expect(result).toBe('ABC');
@@ -28,6 +38,8 @@ describe('Utils test suite', () => {
     expect(parsedUrl.query).toEqual(expected);
   });
 
+  // このテストだけ実行
+  //test.only('array', () => {
   test('array', () => {
     const users = Utils.getUsers();
 
