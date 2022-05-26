@@ -63,7 +63,7 @@ describe('Utils test suite', () => {
     // こっちだと、'Please specify url.' と 'Please specify url' の違いを検知してくれない。
   });
 
-  test.only('test invalid URL with try catch', () => {
+  test('test invalid URL with try catch', () => {
     try {
       Utils.parseUrl('');
     } catch (err) {
@@ -77,3 +77,7 @@ describe('Utils test suite', () => {
  * launch.jsonの設定方法
  * https://github.com/microsoft/vscode-recipes/tree/main/debugging-jest-tests
  */
+
+// jest.config.js のカバレージ設定方法
+// collectCoverage: true,
+// collectCoverageFrom: ['<rootDir>/src/app/**/*.ts'],

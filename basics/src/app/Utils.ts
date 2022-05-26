@@ -2,7 +2,7 @@ import { UrlWithParsedQuery, parse } from 'url';
 
 export class Utils {
   static parseUrl(url: string): UrlWithParsedQuery {
-    if ('url') {
+    if (!url) {
       throw new Error('Please specify url.');
     }
     return parse(url, true);
