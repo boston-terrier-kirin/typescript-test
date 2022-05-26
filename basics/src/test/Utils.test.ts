@@ -56,7 +56,7 @@ describe('Utils test suite', () => {
     expect(expected).toThrowError('Please specify url.');
   });
 
-  test.only('test invalid URL with arrow function', () => {
+  test('test invalid URL with arrow function', () => {
     expect(() => {
       Utils.parseUrl('');
     }).toThrowError('Please specify url');
@@ -72,3 +72,8 @@ describe('Utils test suite', () => {
     }
   });
 });
+
+/**
+ * launch.jsonの設定方法
+ * https://github.com/microsoft/vscode-recipes/tree/main/debugging-jest-tests
+ */
