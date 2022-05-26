@@ -45,4 +45,30 @@ describe('Utils test suite', () => {
 
     expect(users).toEqual(['user1', 'user2', 'user3']);
   });
+
+  test('test invalid URL', () => {
+    // throwをテストする場合はこうする。
+    const expected = () => {
+      Utils.parseUrl('');
+    };
+
+    // メッセージはチェックされていない。
+    expect(expected).toThrowError('Please specify url.');
+  });
+
+  test.only('test invalid URL with arrow function', () => {
+    expect(() => {
+      Utils.parseUrl('');
+    }).toThrowError('Please specify url');
+    // こっちだと、'Please specify url.' と 'Please specify url' の違いを検知してくれない。
+  });
+
+  test.only('test invalid URL with try catch', () => {
+    try {
+      Utils.parseUrl('');
+    } catch (err) {
+      expect(err).toBeInstanceOf(Error);
+      expect(err).toHaveProperty('message', 'Please specify url.');
+    }
+  });
 });
